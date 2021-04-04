@@ -27,7 +27,11 @@ for m in ground:
      print()
 print('1 - means first player`s points \n2 - means second player`s points ')
 for i in range(43): # main part of all this with turn choices and other stuff
-     pl1 = int(input('Player1: Write index of column '))
+     pl1 = input('Player1: Write index of column ').strip()
+     while pl1.isdigit() == False or int(pl1) > 7 or int(pl1) <1:
+          print('This turn is unreal, make another')
+          pl1 = input('Player1: Write index of column ').strip()
+     pl1 = int(pl1)
      pl1 -= 1
      c = 0
      while c < 6:
@@ -36,7 +40,11 @@ for i in range(43): # main part of all this with turn choices and other stuff
                break
           if c == 5 and ground[c][pl1] != 0:
                print('You can`t make this choice')
-               pl1 = int(input('Player1: Write index of column '))
+               pl1 = input('Player1: Write index of column ')
+               while pl1.isdigit() == False or int(pl1) > 7 or int(pl1) < 1:
+                    print('This turn is unreal, make another')
+                    pl1 = input('Player1: Write index of column ').strip()
+               pl1 = int(pl1)
                pl1 -= 1
                c = -1
           c += 1
@@ -60,7 +68,11 @@ for i in range(43): # main part of all this with turn choices and other stuff
           exit()
 
 
-     pl2 = int(input('Player2: Write index of column '))
+     pl2 = input('Player2: Write index of column ')
+     while pl2.isdigit() == False or int(pl2) > 7 or int(pl2) < 1:
+          print('This turn is unreal, make another')
+          pl2 = input('Player2: Write index of column ').strip()
+     pl2 = int(pl2)
      pl2 -= 1
      c = 0
      while c < 6:
@@ -69,7 +81,11 @@ for i in range(43): # main part of all this with turn choices and other stuff
                break
           if c == 5 and ground[c][pl2] != 0:
                print('You can`t make this choice')
-               pl2 = int(input('Player2: Write index of column '))
+               pl2 = input('Player2: Write index of column ')
+               while pl2.isdigit() == False or int(pl2) > 7 or int(pl2) < 1:
+                    print('This turn is unreal, make another')
+                    pl2 = input('Player2: Write index of column ').strip()
+               pl2 = int(pl2)
                pl2 -= 1
                c = -1
           c += 1
