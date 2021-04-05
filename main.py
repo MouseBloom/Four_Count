@@ -17,10 +17,13 @@ def check_d(): # function checks diagonal victory
           for j in range((len(ground[i])-3)):
                if ground[i][j] == ground[i+1][j+1] and ground[i][j] == ground[i+2][j+2] and ground[i][j] == ground[i+3][j+3] and ground[i][j] != 0:
                     return 'victory! '
+               elif ground[i+3][j] == ground[i+2][j+1] and ground[i+3][j] == ground[i+1][j+2] and ground[i+3][j] == ground[i][j+3] and ground[i+3][j] != 0:
+                    return 'victory! '
      return ''
 
 
 ground  = [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]]
+
 for m in ground:
      for k in m:
           print(k, end=' ')
